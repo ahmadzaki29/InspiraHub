@@ -1,50 +1,167 @@
 # Next.js 13 Firebase Starter
 
-This is a starter template for building Next.js 13 applications with Firebase. It provides a solid foundation for developing modern web applications with server-side rendering, authentication, and real-time data synchronization.
+Ini adalah template starter untuk membangun aplikasi Next.js 13 dengan Firebase. Template ini menyediakan fondasi yang solid untuk mengembangkan aplikasi web modern dengan server-side rendering, autentikasi, dan sinkronisasi data real-time.
 
-## Features
+## Fitur
 
-- Next.js 13: Build powerful and scalable server-side rendered React applications.
-- Firebase: Leverage the Firebase platform for authentication, real-time database, and cloud functions.
-- Tailwind CSS: Rapidly build custom user interfaces using the utility-first CSS framework.
-- Automatic Code Splitting: Optimize performance by splitting your JavaScript code into smaller, cacheable chunks.
-- Dynamic Routing: Create dynamic routes for handling different pages and content.
-- Hot Module Replacement: Enjoy a fast development experience with hot module replacement for instant code changes.
-- Environment Variables: Safely manage environment-specific configuration values using environment variables.
-- ESLint and Prettier: Maintain code quality and consistency with the help of ESLint and Prettier.
+- Next.js 13: Membangun aplikasi React dengan server-side rendering yang powerful dan scalable.
+- Firebase: Memanfaatkan platform Firebase untuk autentikasi, database real-time, dan cloud functions.
+- Tailwind CSS: Membangun antarmuka pengguna dengan cepat menggunakan framework CSS utility-first.
+- Automatic Code Splitting: Mengoptimalkan performa dengan memecah kode JavaScript menjadi bagian-bagian yang lebih kecil.
+- Dynamic Routing: Membuat rute dinamis untuk menangani berbagai halaman dan konten.
+- Hot Module Replacement: Pengalaman development yang cepat dengan pembaruan kode instan.
+- Environment Variables: Mengelola konfigurasi dengan aman menggunakan environment variables.
+- ESLint dan Prettier: Menjaga kualitas dan konsistensi kode.
 
-## Prerequisites
+## Prasyarat
 
-Before getting started, ensure you have the following prerequisites:
+Sebelum memulai, pastikan Anda memiliki:
 
-- Node.js 14 or higher
-- npm or yarn package manager
+- Node.js versi 14 atau lebih tinggi
+- npm atau yarn package manager
+- Git (untuk cloning repository)
+- Code editor (disarankan: Visual Studio Code)
+- Web browser modern
 
-## Getting Started
+## Panduan Instalasi Lokal
 
-- To start a new project using this template click `Use this template` button.
-- Navigate into the project directory: `cd nextjs-13-firebase-starter`
-- Install the dependencies:
-
-```bash
-  npm install
-  # or
-  yarn install
-```
-
-- Run the development server:
+### 1. Clone Repository
 
 ```bash
-  npm run dev
-  # or
-  yarn dev
+# Clone repository
+git clone https://github.com/yourusername/nextjs-13-firebase-starter.git
+
+# Masuk ke direktori proyek
+cd nextjs-13-firebase-starter
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Instalasi Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Menggunakan npm
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Atau menggunakan yarn
+yarn install
+```
+
+### 3. Konfigurasi Firebase
+
+1. Buat proyek Firebase baru:
+   - Kunjungi [Firebase Console](https://console.firebase.google.com/)
+   - Klik "Add Project"
+   - Ikuti langkah-langkah untuk membuat proyek baru
+
+2. Dapatkan kredensial Firebase:
+   - Di Firebase Console, pilih proyek Anda
+   - Klik ikon "Web" (</>) untuk mendaftarkan aplikasi web
+   - Catat konfigurasi Firebase yang diberikan
+
+3. Konfigurasi Environment Variables:
+   - Salin file `.env.example` menjadi `.env.local`:
+     ```bash
+     cp .env.example .env.local
+     ```
+   - Isi kredensial Firebase di `.env.local`:
+     ```
+     NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+     NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+     NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+     NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+     NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+     NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+     ```
+
+### 4. Menjalankan Aplikasi
+
+```bash
+# Mode development
+npm run dev
+# atau
+yarn dev
+
+# Mode production
+npm run build
+npm start
+# atau
+yarn build
+yarn start
+```
+
+Aplikasi akan berjalan di [http://localhost:3000](http://localhost:3000)
+
+### 5. Konfigurasi Firebase Authentication
+
+1. Di Firebase Console:
+   - Pilih "Authentication" dari menu sidebar
+   - Klik "Get Started"
+   - Aktifkan metode autentikasi "Email/Password"
+   - Opsional: Aktifkan metode autentikasi lain yang diinginkan
+
+2. Konfigurasi Rules Database (jika menggunakan Firestore):
+   - Pilih "Firestore Database" dari menu sidebar
+   - Buat database baru jika belum ada
+   - Atur rules keamanan sesuai kebutuhan
+
+### 6. Pengembangan Lokal
+
+- Modifikasi kode di direktori `src/`
+- Halaman utama ada di `src/app/page.tsx`
+- Komponen dapat ditambahkan di `src/components/`
+- Konfigurasi Firebase ada di `src/firebase/`
+
+### 7. Testing
+
+```bash
+# Menjalankan unit test
+npm run test
+# atau
+yarn test
+
+# Menjalankan test dengan coverage
+npm run test:coverage
+# atau
+yarn test:coverage
+```
+
+### 8. Debugging
+
+- Gunakan Chrome DevTools untuk debugging frontend
+- Gunakan `console.log()` atau debugger di VS Code
+- Periksa Firebase Console untuk monitoring autentikasi dan database
+
+### 9. Build dan Deployment
+
+```bash
+# Build aplikasi
+npm run build
+# atau
+yarn build
+
+# Jalankan build locally
+npm start
+# atau
+yarn start
+```
+
+## Struktur Folder
+
+```
+nextjs-13-firebase-starter/
+├── src/
+│   ├── app/              # Pages dan routing
+│   ├── components/       # Komponen React
+│   ├── context/         # Context providers
+│   ├── firebase/        # Konfigurasi dan utilitas Firebase
+│   └── styles/          # File CSS dan Tailwind
+├── public/              # Asset statis
+├── tests/              # File test
+├── .env.example        # Contoh environment variables
+├── .gitignore
+├── package.json
+├── README.md
+└── tsconfig.json
+```
 
 ## Learn More
 
