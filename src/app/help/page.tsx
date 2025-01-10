@@ -120,11 +120,11 @@ export default function HelpPage() {
             <div className="space-y-4">
               <div className="space-y-2">
                 <h4 className="font-semibold">Bagaimana cara membuat akun?</h4>
-                <p>Klik tombol "Daftar" di halaman utama dan ikuti langkah-langkah yang tersedia.</p>
+                <p>Klik tombol &quot;Daftar&quot; di halaman utama dan ikuti langkah-langkah yang tersedia.</p>
               </div>
               <div className="space-y-2">
                 <h4 className="font-semibold">Bagaimana cara mengunggah video?</h4>
-                <p>Masuk ke akun Anda, klik tombol "+" dan pilih video yang ingin diunggah.</p>
+                <p>Masuk ke akun Anda, klik tombol &quot;+&quot; dan pilih video yang ingin diunggah.</p>
               </div>
               <div className="space-y-2">
                 <h4 className="font-semibold">Apa saja fitur premium?</h4>
