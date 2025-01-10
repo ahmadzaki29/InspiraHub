@@ -83,7 +83,8 @@ export default function EditProfilePage() {
         return;
       }
       setProfile(data);
-      setValue(data?.[field] || '');
+      const fieldValue = data?.[field];
+      setValue(typeof fieldValue === 'string' ? fieldValue : '');
       setLoading(false);
     }
 
