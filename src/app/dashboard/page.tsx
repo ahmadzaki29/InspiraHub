@@ -101,7 +101,7 @@ export default function DashboardPage() {
       {/* Hero Section */}
       <div className="relative h-[400px] bg-blue-100 mb-12">
         <div className="max-w-7xl mx-auto px-4 py-16 relative z-10">
-          <h1 className="text-5xl font-bold mb-4">Let's get inspired.</h1>
+          <h1 className="text-5xl font-bold mb-4">Let&apos;s get inspired.</h1>
           <p className="text-xl text-gray-700 max-w-2xl">
             Join the hub and find inspiration for your next creation. Explore new ideas, trends, and discover the best in design, music, art and more.
           </p>
